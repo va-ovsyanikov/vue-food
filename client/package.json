@@ -2,17 +2,17 @@
   "name": "vue-pizza",
   "version": "0.1.0",
   "private": true,
+  
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
+ 
   },
   "dependencies": {
     "@kyvg/vue3-notification": "^2.3.4",
     "axios": "^0.24.0",
-    "concurrently": "^7.0.0",
     "core-js": "^3.6.5",
-    "json-server": "^0.17.0",
     "less-loader": "^7.3.0",
     "material-design-icons-iconfont": "^6.1.1",
     "vue": "^3.0.0",

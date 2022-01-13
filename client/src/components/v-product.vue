@@ -124,7 +124,6 @@ export default {
   }
 }
 .product_select {
-  margin-top: auto;
   text-align: center;
   max-width: 280px;
   display: flex;

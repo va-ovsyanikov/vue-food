@@ -70,7 +70,7 @@ export default {
       "PRODUCTS_GET",
       "FILTERITEM",
       "SORTITEM",
-      "NOTIFICATION_GET",
+      "NOTIFICATION",
       "ISLOADED",
       "ISVISIBLEMENU",
     ]),
@@ -128,10 +128,10 @@ export default {
     this.PRODUCTS_FETCH(payload);
   },
   watch: {
-    NOTIFICATION_GET: function () {
+    NOTIFICATION: function () {
       this.$notify({
-        type: `${this.NOTIFICATION_GET.type}`,
-        text: `<i class="material-icons">check_circle</i><span>${this.NOTIFICATION_GET.text}</span>`,
+        type: `${this.NOTIFICATION.type}`,
+        text: `<i class="material-icons">check_circle</i><span>${this.NOTIFICATION.text}</span>`,
       });
     },
   },
@@ -149,6 +149,7 @@ export default {
 .content_list {
   display: flex;
   flex-wrap: wrap;
+  min-height: 100vh;
 }
 @media screen and (max-width: 1300px) {
   .content_list {

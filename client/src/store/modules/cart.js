@@ -71,7 +71,7 @@ const getters = {
     CART_GET: state => state.cart,
     TOTAL_QUANTITY_GET: state => state.cart.reduce((acc, elem) => acc + elem.quantity, 0),
     TOTAL_PRICE_GET: state => state.cart.reduce((acc, elem) => acc + elem.quantity * elem.price, 0),
-    NOTIFICATION_GET: state => state.notification,
+    NOTIFICATION: state => state.notification,
 }
 export default {
     state, mutations, actions, getters

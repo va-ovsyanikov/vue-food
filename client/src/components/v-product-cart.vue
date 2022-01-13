@@ -1,39 +1,38 @@
 <template>
-
-    <div class="product_cart">
-      <div class="product_cart_description">
-        <img :src="imageUrl" alt="alt" />
-        <div>
-          <h3>{{ name }}</h3>
-          <p>{{ type }} тесто, {{ size }} см</p>
-        </div>
-      </div>
-
-      <div class="product_cart_quantity">
-        <v-button
-          :btnCartProduct="true"
-          appendIcon="remove"
-          @click="decrement"
-        ></v-button>
-        <b>{{ quantity }}</b>
-        <v-button
-          :btnCartProduct="true"
-          appendIcon="add"
-          @click="increment(id)"
-        ></v-button>
-      </div>
-      <div class="product_cart_price">
-        <b> {{ price * quantity }} ₽</b>
-      </div>
-      <div class="product_btn_cart_remove">
-        <v-button
-          :btnCartProduct="true"
-          :btnCartProductRemove="true"
-          appendIcon="clear"
-          @click="removeProduct"
-        ></v-button>
+  <div class="product_cart">
+    <div class="product_cart_description">
+      <img :src="imageUrl" alt="alt" />
+      <div>
+        <h3>{{ name }}</h3>
+        <p>{{ type }} тесто, {{ size }} см</p>
       </div>
     </div>
+
+    <div class="product_cart_quantity">
+      <v-button
+        :btnCartProduct="true"
+        appendIcon="remove"
+        @click="decrement"
+      ></v-button>
+      <b>{{ quantity }}</b>
+      <v-button
+        :btnCartProduct="true"
+        appendIcon="add"
+        @click="increment(id)"
+      ></v-button>
+    </div>
+    <div class="product_cart_price">
+      <b> {{ price * quantity }} ₽</b>
+    </div>
+    <div class="product_btn_cart_remove">
+      <v-button
+        :btnCartProduct="true"
+        :btnCartProductRemove="true"
+        appendIcon="clear"
+        @click="removeProduct"
+      ></v-button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -51,7 +50,7 @@ export default {
     type: String,
     size: Number,
     price: Number,
-    quantity: Number
+    quantity: Number,
   },
   methods: {
     ...mapMutations(["INCREMENT", "DECREMENT", "REMOVE_PRODUCT"]),
@@ -68,7 +67,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .product_cart {
   display: flex;
   justify-content: space-between;
@@ -109,6 +108,42 @@ export default {
 .product_cart_price {
   b {
     font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart_top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cart_clear {
+    margin-top: 20px;
+  }
+  .product_cart {
+    flex-direction: column;
+  }
+  .product_cart_quantity {
+    margin-top: 20px;
+  }
+
+  .product_cart_price {
+    margin-top: 20px;
+  }
+
+  .product_btn_cart_remove {
+    margin-top: 20px;
+  }
+  .cart_total {
+    flex-direction: column;
+  }
+  .cart_total_price {
+    margin-top: 15px;
+  }
+  .cart_dealings {
+    flex-direction: column;
+    .btnCartPay {
+      margin-top: 30px;
+    }
   }
 }
 </style>
